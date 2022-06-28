@@ -4,7 +4,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/widgets.dart';
 
 const Duration _kExpand = Duration(milliseconds: 200);
 
@@ -136,7 +135,7 @@ class ProgrammaticExpansionTileState extends State<ProgrammaticExpansionTile>
 
     // Schedule the notification that widget has changed for after init
     // to ensure that the parent widget maintains the correct state
-    SchedulerBinding.instance!.addPostFrameCallback((Duration duration) {
+    SchedulerBinding.instance.addPostFrameCallback((Duration duration) {
       if (widget.onExpansionChanged != null &&
           _isExpanded != widget.initiallyExpanded) {
         widget.onExpansionChanged!(_isExpanded);
